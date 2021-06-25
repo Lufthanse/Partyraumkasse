@@ -19,6 +19,10 @@ public class Einzahlung_main extends AppCompatActivity {
     protected EditText geld;
     protected EditText grund;
     protected String errorMessage;
+    protected View contextView;
+    protected Snackbar snackbar_vis;
+    protected View snackbarView_vis;
+    protected TextView textView_vis;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,24 +66,44 @@ public class Einzahlung_main extends AppCompatActivity {
     }
 
     public void Einzahlen(View view){
+
         if (grund.getVisibility() == View.VISIBLE){
             if(grund.getText().toString().matches("")){
                 errorMessage = "Bei sonstiger Zahlung bitte Grund eingeben!";
-                View contextView = findViewById(android.R.id.content);
-                Snackbar snackbar_vis = Snackbar.make(contextView, errorMessage, Snackbar.LENGTH_SHORT);
-                snackbar_vis.setActionTextColor(ContextCompat.getColor(getBaseContext(), R.color.design_default_color_error));
-                View snackbarView_vis = snackbar_vis.getView();
-                TextView textView_vis = snackbarView_vis.findViewById(R.id.snackbar_text);
-                textView_vis.setTextColor(-65536);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                    textView_vis.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                } else {
-                    textView_vis.setGravity(Gravity.CENTER_HORIZONTAL);
-                }
-                snackbar_vis.show();
-                //test
+                ShowSnackbar(errorMessage);
+                return;
             }
         }
+
+        if(name.getText().toString().matches("")){
+            errorMessage = "Bitte einen Namen eintragen!";
+            ShowSnackbar(errorMessage);
+            return;
+        }
+
+        if(geld.getText().toString().matches("0") || geld.getText().toString() == null){
+            errorMessage = "Bitte Betrag eingeben!";
+            ShowSnackbar(errorMessage);
+            return;
+        }
+
+        // Datenbankabfrage
+
+    }
+
+    protected void ShowSnackbar(String errorMe){
+        contextView = findViewById(android.R.id.content);
+        snackbar_vis = Snackbar.make(contextView, errorMe, Snackbar.LENGTH_SHORT);
+        snackbar_vis.setActionTextColor(ContextCompat.getColor(getBaseContext(), R.color.design_default_color_error));
+        snackbarView_vis = snackbar_vis.getView();
+        textView_vis = snackbarView_vis.findViewById(R.id.snackbar_text);
+        textView_vis.setTextColor(-65536);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            textView_vis.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        } else {
+            textView_vis.setGravity(Gravity.CENTER_HORIZONTAL);
+        }
+        snackbar_vis.show();
 
     }
 
