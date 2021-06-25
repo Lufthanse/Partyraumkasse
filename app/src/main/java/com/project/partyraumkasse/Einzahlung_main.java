@@ -11,13 +11,17 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
 public class Einzahlung_main extends AppCompatActivity {
     protected EditText name;
-    protected EditText geld;
+    protected EditText betrag;
     protected EditText grund;
+    protected String nameString;
+    protected String betragString;
+    protected String grundString;
     protected String errorMessage;
     protected View contextView;
     protected Snackbar snackbar_vis;
@@ -28,30 +32,30 @@ public class Einzahlung_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_einzahlung_main);
         grund = (EditText) findViewById(R.id.inp_grund);
-        geld = (EditText) findViewById(R.id.inp_money);
+        betrag = (EditText) findViewById(R.id.inp_money);
         name = (EditText) findViewById(R.id.inp_name);
     }
 
     public void addGetraenk(View view){
 
-        if (geld.getText().toString().matches("")){
-            geld.setText("0");
+        if (betrag.getText().toString().matches("")){
+            betrag.setText("0");
         }
-        double money = Double.parseDouble(geld.getText().toString());
+        double money = Double.parseDouble(betrag.getText().toString());
         money += 1;
         String moneyS = String.valueOf(money);
-        geld.setText(moneyS);
+        betrag.setText(moneyS);
     }
 
     public void addFlat(View view){
 
-        if (geld.getText().toString().matches("")){
-            geld.setText("0");
+        if (betrag.getText().toString().matches("")){
+            betrag.setText("0");
         }
-        double money = Double.parseDouble(geld.getText().toString());
+        double money = Double.parseDouble(betrag.getText().toString());
         money += 5;
         String moneyS = String.valueOf(money);
-        geld.setText(moneyS);
+        betrag.setText(moneyS);
 
     }
 
@@ -81,13 +85,28 @@ public class Einzahlung_main extends AppCompatActivity {
             return;
         }
 
-        if(geld.getText().toString().matches("0") || geld.getText().toString() == null){
+        if(betrag.getText().toString().matches("0") || betrag.getText().toString() == null){
             errorMessage = "Bitte Betrag eingeben!";
             ShowSnackbar(errorMessage);
             return;
         }
 
-        // Datenbankabfrage
+        // Datenbankoperationen
+        // Create
+        betragString = betrag.getText().toString();
+        nameString = name.getText().toString();
+        grundString = grund.getText().toString();
+
+        Einzahlung einzahlung = new Einzahlung(nameString, betragString, grundString);
+
+        DAOEinzahlung dao = new DAOEinzahlung();
+        dao.add(einzahlung).addOnSuccessListener(suc->
+                {
+                    Toast.makeText(this, "Einzahlung gespeichert", Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(er->
+                {
+                    Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT);
+                });
 
     }
 

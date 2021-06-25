@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "625439673161",
+    "firebase_url": "https://partyraum-kasse-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "partyraum-kasse",
+    "storage_bucket": "partyraum-kasse.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625439673161:android:8f050cd2c768fafb312898",
+        "android_client_info": {
+          "package_name": "com.project.partyraumkasse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625439673161-vfd54ddhaikdo4gn1649gc2tadq4f93j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvAYEEs3a6H6qO4VqrSO0RKxDjmp0_c28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625439673161-vfd54ddhaikdo4gn1649gc2tadq4f93j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
