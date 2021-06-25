@@ -77,6 +77,7 @@ public class Einzahlung_main extends AppCompatActivity {
                     textView_vis.setGravity(Gravity.CENTER_HORIZONTAL);
                 }
                 snackbar_vis.show();
+                //test
             }
         }
 
