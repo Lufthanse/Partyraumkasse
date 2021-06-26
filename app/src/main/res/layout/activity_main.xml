@@ -194,7 +194,7 @@
         app:layout_constraintTop_toBottomOf="@+id/grid_kassenstand" />
 
     <TextView
-        android:id="@+id/tv_pizza"
+        android:id="@+id/tv_pizzaliste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="258dp"
