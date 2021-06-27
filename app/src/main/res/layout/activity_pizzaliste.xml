@@ -7,22 +7,6 @@
     android:background="#170C30"
     tools:context=".Pizzaliste">
 
-    <Button
-        android:id="@+id/btn_extras"
-        android:layout_width="95dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="182dp"
-        android:layout_marginLeft="182dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="182dp"
-        android:layout_marginRight="182dp"
-        android:onClick="showExtras"
-        android:text="Extras"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_pizza" />
-
     <TextView
         android:id="@+id/tv_PizzalistePL"
         android:layout_width="wrap_content"
@@ -41,70 +25,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/inp_namePL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="182dp"
-        android:layout_marginLeft="182dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="182dp"
-        android:layout_marginRight="182dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        android:singleLine="true"
-        android:textColor="#C2185B"
-        android:textColorHint="#C2185B"
-        android:backgroundTint="#C2185B"
-        android:textSize="24sp"
+    <ImageButton
+        android:id="@+id/btn_addPL"
+        android:layout_width="49dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="628dp"
+        android:background="#170C30"
+        android:onClick="addPizza"
+        android:tint="#C2185B"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_PizzalistePL" />
-
-    <EditText
-        android:id="@+id/inp_pizza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="182dp"
-        android:layout_marginLeft="182dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="182dp"
-        android:layout_marginRight="182dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Pizza"
-        android:singleLine="true"
-        android:textColor="#C2185B"
-        android:textColorHint="#C2185B"
-        android:backgroundTint="#C2185B"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_namePL" />
-
-    <EditText
-        android:id="@+id/inp_Extras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="182dp"
-        android:layout_marginLeft="182dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="182dp"
-        android:layout_marginRight="182dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Extras"
-        android:inputType="textPersonName"
-        android:singleLine="true"
-        android:textColor="#C2185B"
-        android:textColorHint="#C2185B"
-        android:backgroundTint="#C2185B"
-        android:textSize="24sp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_extras" />
+        app:layout_constraintStart_toEndOf="@+id/tv_PizzalistePL"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.484"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
