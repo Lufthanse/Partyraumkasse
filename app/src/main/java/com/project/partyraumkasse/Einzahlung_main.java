@@ -3,6 +3,7 @@ package com.project.partyraumkasse;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
@@ -108,6 +109,9 @@ public class Einzahlung_main extends AppCompatActivity {
                 {
                     Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT);
                 });
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 

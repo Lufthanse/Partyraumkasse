@@ -3,6 +3,7 @@ package com.project.partyraumkasse;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -73,6 +74,9 @@ public class Auszahlung_main extends AppCompatActivity {
         {
             String error = er.getMessage();
         });
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 

@@ -228,6 +228,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="20dp"
+        android:background="#512DA8"
         android:onClick="Einzahlen"
         android:text="Einzahlen"
         android:textSize="18sp"
