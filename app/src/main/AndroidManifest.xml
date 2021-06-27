@@ -13,7 +13,7 @@
         <activity android:name=".Einkaufsliste" />
         <activity android:name=".Kalender" />
         <activity android:name=".Historie" />
-        <activity android:name=".Auszahlung" />
+        <activity android:name=".Auszahlung_main" />
         <activity android:name=".Einzahlung_main" />
         <activity android:name=".MainActivity">
             <intent-filter>

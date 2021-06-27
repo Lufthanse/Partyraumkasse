@@ -1,14 +1,92 @@
 package com.project.partyraumkasse;
 
-import androidx.appcompat.app.AppCompatActivity;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import android.os.Bundle;
+public class Auszahlung {
+    private String name;
+    private String betrag;
+    private String grund;
+    private String datum;
+    private String uhrzeit;
+    private String kennzeichen;
+    private SimpleDateFormat formatterDate;
+    private SimpleDateFormat formatterTime;
 
-public class Auszahlung extends AppCompatActivity {
+    public Auszahlung(String name, String betrag, String grund) {
+        this.name = name;
+        this.betrag = betrag;
+        this.grund = grund;
+        this.formatterDate = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        this.datum = formatterDate.format(date).toString();
+        this.formatterTime = new SimpleDateFormat("hh:mm:ss");
+        Date time = new Date();
+        this.uhrzeit = formatterTime.format(time).toString();
+        this.kennzeichen = "AZ";
+    }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_auszahlung);
+    public String getName() {
+        return name;
+    }
+
+    public String getBetrag() {
+        return betrag;
+    }
+
+    public String getGrund() {
+        return grund;
+    }
+
+    public String getDatum() {
+        return datum;
+    }
+
+    public String getUhrzeit() {
+        return uhrzeit;
+    }
+
+    public String getKennzeichen() {
+        return kennzeichen;
+    }
+
+    public SimpleDateFormat getFormatterDate() {
+        return formatterDate;
+    }
+
+    public SimpleDateFormat getFormatterTime() {
+        return formatterTime;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBetrag(String betrag) {
+        this.betrag = betrag;
+    }
+
+    public void setGrund(String grund) {
+        this.grund = grund;
+    }
+
+    public void setDatum(String datum) {
+        this.datum = datum;
+    }
+
+    public void setUhrzeit(String uhrzeit) {
+        this.uhrzeit = uhrzeit;
+    }
+
+    public void setKennzeichen(String kennzeichen) {
+        this.kennzeichen = kennzeichen;
+    }
+
+    public void setFormatterDate(SimpleDateFormat formatterDate) {
+        this.formatterDate = formatterDate;
+    }
+
+    public void setFormatterTime(SimpleDateFormat formatterTime) {
+        this.formatterTime = formatterTime;
     }
 }

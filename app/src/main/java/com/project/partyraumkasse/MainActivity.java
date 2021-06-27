@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void navigateAuszahlung (View View){
         // HaKi 07.02.2021 16:15 - New Screen
-        Intent intent = new Intent(this, Auszahlung.class);
+        Intent intent = new Intent(this, Auszahlung_main.class);
         startActivity(intent);
     }
 

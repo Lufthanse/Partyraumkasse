@@ -190,7 +190,7 @@
         android:backgroundTint="#C2185B"
         android:ems="10"
         android:gravity="center_horizontal"
-        android:inputType="numberSigned"
+        android:inputType="numberDecimal"
         android:text="0"
         android:textAlignment="center"
         android:textColor="#C2185B"

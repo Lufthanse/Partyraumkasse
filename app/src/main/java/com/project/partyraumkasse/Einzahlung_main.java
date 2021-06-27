@@ -27,6 +27,7 @@ public class Einzahlung_main extends AppCompatActivity {
     protected Snackbar snackbar_vis;
     protected View snackbarView_vis;
     protected TextView textView_vis;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
