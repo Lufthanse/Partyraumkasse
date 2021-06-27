@@ -50,14 +50,6 @@ public class Auszahlung {
         return kennzeichen;
     }
 
-    public SimpleDateFormat getFormatterDate() {
-        return formatterDate;
-    }
-
-    public SimpleDateFormat getFormatterTime() {
-        return formatterTime;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -82,11 +74,4 @@ public class Auszahlung {
         this.kennzeichen = kennzeichen;
     }
 
-    public void setFormatterDate(SimpleDateFormat formatterDate) {
-        this.formatterDate = formatterDate;
-    }
-
-    public void setFormatterTime(SimpleDateFormat formatterTime) {
-        this.formatterTime = formatterTime;
-    }
 }
