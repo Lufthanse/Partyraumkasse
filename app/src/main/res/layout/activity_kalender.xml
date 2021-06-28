@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#170C30"
     tools:context=".Kalender">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
