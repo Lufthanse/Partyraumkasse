@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardViewEL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,12 +17,12 @@
     </androidx.cardview.widget.CardView>
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/relativeLayoutEL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#512DA8"
         android:minHeight="50dp"
-        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/cardViewEL"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
@@ -66,7 +66,8 @@
             android:layout_width="38dp"
             android:layout_height="60dp"
             android:background="#512DA8"
-            app:srcCompat="@drawable/ic_delete" />
+            app:srcCompat="@drawable/ic_delete"
+            tools:ignore="VectorDrawableCompat" />
 
         <TextView
             android:id="@+id/tv_moneyEL"

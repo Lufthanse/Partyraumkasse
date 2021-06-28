@@ -35,7 +35,6 @@ public class Pizzaliste extends AppCompatActivity {
             @Override
             public void onCallback(ArrayList<Pizza> pl) {
                 pizzalist = pl;
-                Log.d("TAG", pl.toString());
                 BuildRecyclerView();
             }
         });

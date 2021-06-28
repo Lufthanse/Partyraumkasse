@@ -8,7 +8,7 @@
     tools:context=".Pop">
 
     <EditText
-        android:id="@+id/inp_nameEL"
+        android:id="@+id/inp_namehund"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="182dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/inp_pizzaEL"
+        android:id="@+id/inp_pizzaPL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="182dp"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_nameEL" />
+        app:layout_constraintTop_toBottomOf="@+id/inp_namehund" />
 
     <EditText
         android:id="@+id/inp_extrasPL"
@@ -76,10 +76,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_extras" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_extrasPL" />
 
     <Button
-        android:id="@+id/btn_extras"
+        android:id="@+id/btn_extrasPL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="182dp"
@@ -92,10 +92,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_pizzaEL" />
+        app:layout_constraintTop_toBottomOf="@+id/inp_pizzaPL" />
 
     <Button
-        android:id="@+id/btn_hinzufügenEL"
+        android:id="@+id/btn_hinzufügenPL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="182dp"

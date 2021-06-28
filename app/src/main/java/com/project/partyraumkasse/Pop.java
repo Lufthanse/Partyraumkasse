@@ -34,7 +34,7 @@ public class Pop extends Activity {
 
         setContentView(R.layout.activity_popup_pl);
 
-        name = (EditText) findViewById(R.id.inp_namePL);
+        name = (EditText) findViewById(R.id.inp_namehund);
         pizza = (EditText) findViewById(R.id.inp_pizzaPL);
         extras = (EditText) findViewById(R.id.inp_extrasPL);
 
