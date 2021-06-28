@@ -22,32 +22,24 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Pizzaliste extends AppCompatActivity {
-    private ArrayList<Pizza> pizzalist;
-    private String name;
-    private String pizza;
-    private String extras;
-    private Pizza pz;
-
-    private RecyclerView recyclerView;
+    private ArrayList<Pizza> pizzalist = new ArrayList<>();
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference root = db.getReference().child("Pizza");
-    private RecyclerAdapterPizzaliste adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizzaliste);
 
-        recyclerView = findViewById(R.id.rv_pizzaliste);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        readData(new MyCallback() {
+            @Override
+            public void onCallback(ArrayList<Pizza> pl) {
+                pizzalist = pl;
+                Log.d("TAG", pl.toString());
+                BuildRecyclerView();
+            }
+        });
 
-        pizzalist = new ArrayList<>();
-        adapter = new RecyclerAdapterPizzaliste(pizzalist);
-
-        recyclerView.setAdapter(adapter);
-
-        ReadPizzaliste();
     }
 
         public void addPizza(View view){
@@ -56,30 +48,48 @@ public class Pizzaliste extends AppCompatActivity {
         }
 
         public void ReadPizzaliste() {
+
+        }
+
+        public void BuildRecyclerView(){
+
+            RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_pizzaliste);
+            recyclerView.setHasFixedSize(true);
+
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+
+            RecyclerAdapterPizzaliste adapterPizzaliste = new RecyclerAdapterPizzaliste(pizzalist);
+            recyclerView.setAdapter(adapterPizzaliste);
+
+        }
+
+        private void readData(MyCallback myCallback){
             root.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                public void onDataChange(DataSnapshot snapshot) {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                        String nameHU = dataSnapshot.child("name").getValue(String.class);
-                        String pizzaHU = dataSnapshot.child("pizza").getValue(String.class);
-                        String extraHU = dataSnapshot.child("extras").getValue(String.class);
-                        Pizza pizza = new Pizza(nameHU, pizzaHU, extraHU);
-                        pizzalist.add(pizza);
+                        String name = dataSnapshot.child("name").getValue(String.class);
+                        String pizza = dataSnapshot.child("pizza").getValue(String.class);
+                        String extra = dataSnapshot.child("extras").getValue(String.class);
+                        Pizza pizzas = new Pizza(name, pizza, extra);
+                        pizzalist.add(pizzas);
                     }
 
+                    myCallback.onCallback(pizzalist);
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-                    Log.w("Schmutz", "loadPost:onCancelled", error.toException());
+                    Log.w("Tag", "loadPost:onCancelled", error.toException());
                 }
             });
-
-            adapter.notifyDataSetChanged();
-
-
         }
 
+        public interface MyCallback{
+            void onCallback(ArrayList<Pizza> pl);
+        }
 
 
     }

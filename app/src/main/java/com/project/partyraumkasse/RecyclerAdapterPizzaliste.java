@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdapterPizzaliste.MyViewHolder> {
 
-    protected ArrayList<Pizza> pizzaList;
+    private ArrayList<Pizza> pizzaList;
 
     public RecyclerAdapterPizzaliste( ArrayList<Pizza> pizzaList){
         this.pizzaList = pizzaList;
@@ -22,9 +22,10 @@ public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdap
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_pizza_item, parent, false);
-        return new MyViewHolder(v);
+        MyViewHolder mvh = new MyViewHolder(v);
+        return mvh;
     }
 
     @Override
@@ -49,7 +50,7 @@ public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdap
 
             name = itemView.findViewById(R.id.tv_name);
             pizza = itemView.findViewById(R.id.tv_pizza);
-            pizza = itemView.findViewById(R.id.tv_extras2);
+            extras = itemView.findViewById(R.id.tv_extras2);
         }
     }
 
