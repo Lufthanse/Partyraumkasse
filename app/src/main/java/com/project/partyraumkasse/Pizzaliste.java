@@ -20,11 +20,16 @@ import android.util.Log;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Pizzaliste extends AppCompatActivity {
     private ArrayList<Pizza> pizzalist = new ArrayList<>();
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference root = db.getReference().child("Pizza");
+    private RecyclerAdapterPizzaliste adapterPizzaliste;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +51,6 @@ public class Pizzaliste extends AppCompatActivity {
 
         }
 
-        public void ReadPizzaliste() {
-
-        }
-
         public void BuildRecyclerView(){
 
             RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_pizzaliste);
@@ -59,12 +60,33 @@ public class Pizzaliste extends AppCompatActivity {
             linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             recyclerView.setLayoutManager(linearLayoutManager);
 
-            RecyclerAdapterPizzaliste adapterPizzaliste = new RecyclerAdapterPizzaliste(pizzalist);
+            ArrayList<Pizza> pizzaListDUP = new ArrayList<>();
+            for (Pizza pz : pizzalist){
+                if (!pizzaListDUP.contains(pz)){
+                    pizzaListDUP.add(pz);
+                }
+            }
+
+
+            adapterPizzaliste = new RecyclerAdapterPizzaliste(pizzalist);
             recyclerView.setAdapter(adapterPizzaliste);
+
+            adapterPizzaliste.setOnItemClickListener(new RecyclerAdapterPizzaliste.OnItemClickListener(){
+                @Override
+                public void onDeleteClick(int position){
+                    removeItem(position);
+                }
+
+                public void onItemClick(int position){
+                    changeItem(position);
+                }
+            });
+
 
         }
 
         private void readData(MyCallback myCallback){
+            if(pizzalist.isEmpty()){
             root.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
@@ -72,7 +94,8 @@ public class Pizzaliste extends AppCompatActivity {
                         String name = dataSnapshot.child("name").getValue(String.class);
                         String pizza = dataSnapshot.child("pizza").getValue(String.class);
                         String extra = dataSnapshot.child("extras").getValue(String.class);
-                        Pizza pizzas = new Pizza(name, pizza, extra);
+                        String id = dataSnapshot.getKey();
+                        Pizza pizzas = new Pizza(name, pizza, extra, id);
                         pizzalist.add(pizzas);
                     }
 
@@ -84,12 +107,25 @@ public class Pizzaliste extends AppCompatActivity {
                     Log.w("Tag", "loadPost:onCancelled", error.toException());
                 }
             });
+
+            }
         }
 
         public interface MyCallback{
             void onCallback(ArrayList<Pizza> pl);
         }
 
+        public void removeItem(int position){
+            Pizza pizzaDelete = pizzalist.get(position);
+            pizzalist.remove(position);
+            adapterPizzaliste.notifyItemRemoved(position);
+            DatabaseReference pizdel = FirebaseDatabase.getInstance().getReference("Pizza").child(pizzaDelete.getId());
+            pizdel.removeValue();
+        }
+
+        public void changeItem(int position) {
+            adapterPizzaliste.notifyItemChanged(position);
+        }
 
     }
 

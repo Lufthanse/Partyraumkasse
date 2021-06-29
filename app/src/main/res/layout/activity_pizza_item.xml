@@ -37,30 +37,14 @@
                 android:id="@+id/tv_pizza"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="130dp"
-                android:layout_marginLeft="130dp"
-                android:layout_toEndOf="@+id/tv_name"
-                android:layout_toRightOf="@+id/tv_name"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="118dp"
+                android:layout_marginLeft="118dp"
+                android:layout_marginTop="0dp"
                 android:text="Pizza"
                 android:textColor="#170C30" />
-
-            <ImageButton
-                android:id="@+id/btn_delete"
-                android:layout_width="37dp"
-                android:layout_height="32dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="134dp"
-                android:layout_marginLeft="134dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="3dp"
-                android:layout_marginRight="3dp"
-                android:layout_toEndOf="@+id/tv_pizza"
-                android:layout_toRightOf="@+id/tv_pizza"
-                android:background="#512DA8"
-                app:srcCompat="@drawable/ic_delete"
-                tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:id="@+id/tv_extras2"
@@ -74,6 +58,23 @@
                 android:layout_marginTop="10dp"
                 android:text="Extras"
                 android:textColor="#170C30" />
+
+            <ImageView
+                android:id="@+id/btn_deletePL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="345dp"
+                android:layout_marginLeft="345dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginRight="42dp"
+                app:srcCompat="@drawable/ic_delete"
+                tools:ignore="VectorDrawableCompat" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

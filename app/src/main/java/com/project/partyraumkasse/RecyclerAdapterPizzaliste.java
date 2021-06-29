@@ -1,21 +1,33 @@
 package com.project.partyraumkasse;
 
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import android.content.Context;
+
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdapterPizzaliste.MyViewHolder> {
 
     private ArrayList<Pizza> pizzaList;
 
+    private OnItemClickListener listener;
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+        void onDeleteClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
+    }
     public RecyclerAdapterPizzaliste( ArrayList<Pizza> pizzaList){
         this.pizzaList = pizzaList;
     }
@@ -24,7 +36,7 @@ public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdap
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_pizza_item, parent, false);
-        MyViewHolder mvh = new MyViewHolder(v);
+        MyViewHolder mvh = new MyViewHolder(v, listener);
         return mvh;
     }
 
@@ -34,6 +46,7 @@ public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdap
         holder.name.setText(pizza.getName());
         holder.pizza.setText(pizza.getPizza());
         holder.extras.setText(pizza.getExtras());
+        holder.deleteImage.setImageResource(R.drawable.ic_delete);
     }
 
     @Override
@@ -44,14 +57,53 @@ public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdap
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView name, pizza, extras;
+        ImageView deleteImage;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
 
             name = itemView.findViewById(R.id.tv_name);
             pizza = itemView.findViewById(R.id.tv_pizza);
             extras = itemView.findViewById(R.id.tv_extras2);
+            deleteImage = itemView.findViewById(R.id.btn_deletePL);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION ){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
+
+            deleteImage.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if (listener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onDeleteClick(position);
+                        }
+                    }
+                }
+            });
+
+
         }
+
+    }
+
+    @Override
+    public long getItemId(int position){
+        return position;
+    }
+
+    @Override
+    public int getItemViewType(int position){
+        return position;
     }
 
 }

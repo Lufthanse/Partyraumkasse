@@ -4,6 +4,7 @@ public class Pizza {
     private String name;
     private String pizza;
     private String extras;
+    private String id;
 
     public Pizza(String name, String pizza, String extras) {
         this.name = name;
@@ -11,7 +12,22 @@ public class Pizza {
         this.extras = extras;
     }
 
+    public Pizza(String name, String pizza, String extras, String id){
+        this.name = name;
+        this.pizza = pizza;
+        this.extras = extras;
+        this.id = id;
+    }
+
     public Pizza() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
