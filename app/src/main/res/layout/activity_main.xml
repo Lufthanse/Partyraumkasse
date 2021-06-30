@@ -30,25 +30,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <GridView
-        android:id="@+id/grid_kassenstand"
-        android:layout_width="382dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:layout_marginBottom="550dp"
-        android:background="#231539"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
-
     <Button
         android:id="@+id/btn_einzahlung"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
@@ -56,7 +37,7 @@
         android:layout_height="133dp"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="21dp"
         android:layout_marginEnd="250dp"
         android:layout_marginRight="250dp"
         android:layout_marginBottom="425dp"
@@ -70,8 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grid_kassenstand"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintTop_toBottomOf="@+id/rl_kassenstand" />
 
     <TextView
         android:id="@+id/tv_einzahlung"
@@ -99,7 +79,7 @@
         android:layout_height="133dp"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="384dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="250dp"
         android:layout_marginRight="250dp"
         android:layout_marginBottom="50dp"
@@ -111,7 +91,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grid_kassenstand" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_historie" />
 
     <TextView
         android:id="@+id/tv_kalender"
@@ -140,6 +120,7 @@
         android:layout_height="133dp"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="250dp"
         android:layout_marginRight="250dp"
         android:layout_marginBottom="240dp"
@@ -151,7 +132,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_einzahlung" />
 
     <TextView
         android:id="@+id/tv_historie"
@@ -179,7 +161,7 @@
         android:layout_height="133dp"
         android:layout_marginStart="250dp"
         android:layout_marginLeft="250dp"
-        android:layout_marginTop="384dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="50dp"
@@ -191,7 +173,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grid_kassenstand" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_ekliste" />
 
     <TextView
         android:id="@+id/tv_pizzaliste"
@@ -219,7 +201,7 @@
         android:layout_height="133dp"
         android:layout_marginStart="250dp"
         android:layout_marginLeft="250dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="240dp"
@@ -231,7 +213,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grid_kassenstand" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_auszahlung" />
 
     <TextView
         android:id="@+id/tv_ekliste"
@@ -259,7 +241,7 @@
         android:layout_height="133dp"
         android:layout_marginStart="250dp"
         android:layout_marginLeft="250dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="21dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="425dp"
@@ -271,7 +253,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grid_kassenstand" />
+        app:layout_constraintTop_toBottomOf="@+id/rl_kassenstand" />
 
     <TextView
         android:id="@+id/tv_auszahlung"
@@ -291,5 +273,52 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_auszahlung" />
+
+    <RelativeLayout
+        android:id="@+id/rl_kassenstand"
+        android:layout_width="370dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="610dp"
+        android:background="#231539"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ueberschrift">
+
+        <TextView
+            android:id="@+id/tv_kassenstandtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:text="Kassenstand:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_kassenstand"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="64dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginRight="21dp"
+            android:layout_marginBottom="18dp"
+            android:layout_toEndOf="@+id/tv_kassenstandtext"
+            android:layout_toRightOf="@+id/tv_kassenstandtext"
+            android:text="100.00€"
+            android:textSize="24sp" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
