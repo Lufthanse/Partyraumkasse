@@ -45,6 +45,22 @@
         app:layout_constraintVertical_bias="0.484"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
+    <ImageButton
+        android:id="@+id/btn_delPL"
+        android:layout_width="49dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="628dp"
+        android:background="#170C30"
+        android:onClick="deletePL"
+        android:tint="#C2185B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_PizzalistePL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.484"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_pizzaliste"
         android:layout_width="411dp"

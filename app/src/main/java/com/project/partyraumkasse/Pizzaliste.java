@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -60,14 +62,6 @@ public class Pizzaliste extends AppCompatActivity {
             linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             recyclerView.setLayoutManager(linearLayoutManager);
 
-            ArrayList<Pizza> pizzaListDUP = new ArrayList<>();
-            for (Pizza pz : pizzalist){
-                if (!pizzaListDUP.contains(pz)){
-                    pizzaListDUP.add(pz);
-                }
-            }
-
-
             adapterPizzaliste = new RecyclerAdapterPizzaliste(pizzalist);
             recyclerView.setAdapter(adapterPizzaliste);
 
@@ -90,6 +84,7 @@ public class Pizzaliste extends AppCompatActivity {
             root.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
+                    pizzalist.clear();
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         String name = dataSnapshot.child("name").getValue(String.class);
                         String pizza = dataSnapshot.child("pizza").getValue(String.class);
@@ -121,6 +116,31 @@ public class Pizzaliste extends AppCompatActivity {
             adapterPizzaliste.notifyItemRemoved(position);
             DatabaseReference pizdel = FirebaseDatabase.getInstance().getReference("Pizza").child(pizzaDelete.getId());
             pizdel.removeValue();
+        }
+
+        public void deletePL(View view){
+
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int choice) {
+                    switch (choice){
+                        case DialogInterface.BUTTON_POSITIVE:
+                        DatabaseReference pldel = FirebaseDatabase.getInstance().getReference("Pizza");
+                        pldel.removeValue();
+                        pizzalist.clear();
+                        adapterPizzaliste.notifyDataSetChanged();
+
+                        case DialogInterface.BUTTON_NEGATIVE:
+                            break;
+                    }
+                }
+            };
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+            builder.setTitle("Achtung!");
+            builder.setMessage("Alle Pizzen aus der Pizzaliste löschen?");
+            builder.setPositiveButton("Ja", dialogClickListener).setNegativeButton("Nein", dialogClickListener).show();
+
         }
 
         public void changeItem(int position) {
