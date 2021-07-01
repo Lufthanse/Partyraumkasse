@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="410dp"
+        android:id="@+id/CardViewHist"
+        android:layout_width="412dp"
         android:layout_height="70dp"
+        app:cardBackgroundColor="#170C30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -16,19 +17,24 @@
         <RelativeLayout
             android:id="@+id/rl_zahlung"
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="60dp"
+            android:background="#512DA8">
 
             <TextView
                 android:id="@+id/tv_nameZ"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="9dp"
+                android:layout_marginEnd="361dp"
+                android:layout_marginRight="361dp"
                 android:layout_marginBottom="33dp"
                 android:text="Name" />
 
@@ -48,12 +54,12 @@
                 android:layout_marginEnd="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginBottom="21dp"
-                android:text="TextView" />
+                android:text="Betrag" />
 
             <TextView
                 android:id="@+id/tv_datumZ"
                 android:layout_width="54dp"
-                android:layout_height="18dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -69,18 +75,40 @@
                 android:text="Datum" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tv_uhrzeitZ"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="196dp"
+                android:layout_marginLeft="196dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="169dp"
+                android:layout_marginRight="169dp"
+                android:layout_marginBottom="33dp"
+                android:text="Uhrzeit" />
+
+            <TextView
+                android:id="@+id/tv_grundZ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="190dp"
-                android:layout_marginLeft="190dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="31dp"
-                android:text="TextView" />
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="340dp"
+                android:layout_marginRight="340dp"
+                android:layout_marginBottom="6dp"
+                android:text="Grund" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
