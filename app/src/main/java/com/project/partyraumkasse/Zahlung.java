@@ -1,8 +1,10 @@
 package com.project.partyraumkasse;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Zahlung {
+public class Zahlung implements Comparable<Zahlung>{
 
     private String name;
     private String betrag;
@@ -70,4 +72,22 @@ public class Zahlung {
     public void setZahlungsart(String zahlungsart) {
         this.zahlungsart = zahlungsart;
     }
+
+    public Date getDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String dateString = this.getDatum();
+        Date date = new Date();
+        try {
+            date = formatter.parse(dateString);
+        }catch(ParseException ex){
+
+        }
+        return date;
+    }
+
+    @Override
+    public int compareTo(Zahlung z){
+        return getDate().compareTo(this.getDate());
+    }
+
 }

@@ -22,8 +22,8 @@
 
             <TextView
                 android:id="@+id/tv_nameZ"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="125dp"
+                android:layout_height="19dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -33,9 +33,9 @@
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="9dp"
-                android:layout_marginEnd="361dp"
-                android:layout_marginRight="361dp"
-                android:layout_marginBottom="33dp"
+                android:layout_marginEnd="276dp"
+                android:layout_marginRight="276dp"
+                android:layout_marginBottom="32dp"
                 android:text="Name" />
 
             <TextView
@@ -48,35 +48,35 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="340dp"
-                android:layout_marginLeft="340dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="21dp"
+                android:layout_marginStart="317dp"
+                android:layout_marginLeft="317dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="6dp"
                 android:text="Betrag" />
 
             <TextView
                 android:id="@+id/tv_datumZ"
-                android:layout_width="54dp"
-                android:layout_height="wrap_content"
+                android:layout_width="95dp"
+                android:layout_height="19dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="100dp"
-                android:layout_marginLeft="100dp"
+                android:layout_marginStart="148dp"
+                android:layout_marginLeft="148dp"
                 android:layout_marginTop="9dp"
-                android:layout_marginEnd="256dp"
-                android:layout_marginRight="256dp"
-                android:layout_marginBottom="33dp"
+                android:layout_marginEnd="169dp"
+                android:layout_marginRight="169dp"
+                android:layout_marginBottom="32dp"
                 android:text="Datum" />
 
             <TextView
                 android:id="@+id/tv_uhrzeitZ"
-                android:layout_width="wrap_content"
+                android:layout_width="56dp"
                 android:layout_height="18dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
@@ -84,18 +84,18 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="196dp"
-                android:layout_marginLeft="196dp"
+                android:layout_marginStart="246dp"
+                android:layout_marginLeft="246dp"
                 android:layout_marginTop="9dp"
-                android:layout_marginEnd="169dp"
-                android:layout_marginRight="169dp"
+                android:layout_marginEnd="110dp"
+                android:layout_marginRight="110dp"
                 android:layout_marginBottom="33dp"
                 android:text="Uhrzeit" />
 
             <TextView
                 android:id="@+id/tv_grundZ"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="277dp"
+                android:layout_height="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -105,10 +105,26 @@
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="35dp"
-                android:layout_marginEnd="340dp"
-                android:layout_marginRight="340dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="124dp"
+                android:layout_marginRight="124dp"
+                android:layout_marginBottom="5dp"
                 android:text="Grund" />
+
+            <TextView
+                android:id="@+id/tv_zahlungsartZ"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="316dp"
+                android:layout_marginLeft="316dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="21dp"
+                android:layout_marginRight="21dp"
+                android:text="Zahlungsart" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

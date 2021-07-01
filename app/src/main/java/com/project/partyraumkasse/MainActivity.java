@@ -136,7 +136,9 @@ public class MainActivity extends AppCompatActivity {
 
         ergebnis = einzahlungen - auszahlungen;
 
-        return ergebnis.toString();
+        String ergeb = String.format("%.2f", ergebnis);
+
+        return ergeb;
     }
 
     public interface MyCallback{
