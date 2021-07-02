@@ -1,7 +1,14 @@
 package com.project.partyraumkasse;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalTime;
+import java.time.ZonedDateTime;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class Auszahlung {
     private String name;
@@ -20,8 +27,10 @@ public class Auszahlung {
         this.formatterDate = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         this.datum = formatterDate.format(date).toString();
-        this.formatterTime = new SimpleDateFormat("hh:mm:ss");
+        this.formatterTime = new SimpleDateFormat("HH:mm:ss", Locale.GERMANY);
+        ZonedDateTime zdt = ZonedDateTime.now();
         Date time = new Date();
+        formatterTime.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
         this.uhrzeit = formatterTime.format(time).toString();
         this.kennzeichen = "AZ";
     }

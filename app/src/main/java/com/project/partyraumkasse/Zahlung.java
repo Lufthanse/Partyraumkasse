@@ -74,8 +74,8 @@ public class Zahlung implements Comparable<Zahlung>{
     }
 
     public Date getDate() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String dateString = this.getDatum();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String dateString = this.getDatum() + " " + this.getUhrzeit();
         Date date = new Date();
         try {
             date = formatter.parse(dateString);

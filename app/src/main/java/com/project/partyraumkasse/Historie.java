@@ -55,7 +55,7 @@ public class Historie extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 zahlungList1.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    String betragEz = dataSnapshot.child("betrag").getValue(String.class);
+                    String betragEz = dataSnapshot.child("betrag").getValue(String.class) + "€";
                     String nameEz = dataSnapshot.child("name").getValue(String.class);
                     String datumEz = dataSnapshot.child("datum").getValue(String.class);
                     String uhrzeitEz = dataSnapshot.child("uhrzeit").getValue(String.class);
@@ -88,7 +88,7 @@ public class Historie extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 zahlungList2.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    String betragAz = dataSnapshot.child("betrag").getValue(String.class);
+                    String betragAz = dataSnapshot.child("betrag").getValue(String.class) + "€";
                     String nameAz = dataSnapshot.child("name").getValue(String.class);
                     String datumAz = dataSnapshot.child("datum").getValue(String.class);
                     String uhrzeitAz = dataSnapshot.child("uhrzeit").getValue(String.class);
