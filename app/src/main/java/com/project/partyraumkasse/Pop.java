@@ -91,7 +91,7 @@ public class Pop extends Activity {
             Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT);
         });
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Pizzaliste.class);
         startActivity(intent);
 
     }

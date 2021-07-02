@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Partyraumkasse"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Pizzaliste"></activity>
+        <activity android:name=".AddEinkauf"></activity>
+        <activity android:name=".Pizzaliste" />
         <activity android:name=".Einkaufsliste" />
         <activity android:name=".Kalender" />
         <activity android:name=".Historie" />
@@ -23,8 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity android:name=".Pop" ></activity>
+        <activity android:name=".Pop" />
     </application>
 
 </manifest>

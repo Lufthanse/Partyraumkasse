@@ -1,5 +1,6 @@
 package com.project.partyraumkasse;
 
+import androidx.recyclerview.widget.RecyclerView;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,60 +15,61 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdapterPizzaliste.MyViewHolder> {
 
-    private ArrayList<Pizza> pizzaList;
+public class RecyclerAdapterEinkaufsliste extends RecyclerView.Adapter<RecyclerAdapterEinkaufsliste.MyViewHolder> {
 
-    private OnItemClickListener listener;
+
+    private ArrayList<Einkauf> einkaufList;
+
+    private RecyclerAdapterEinkaufsliste.OnItemClickListener listener;
 
     public interface OnItemClickListener{
         void onItemClick(int position);
         void onDeleteClick(int position);
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener){
+    public void setOnItemClickListener(RecyclerAdapterEinkaufsliste.OnItemClickListener listener){
         this.listener = listener;
     }
-    public RecyclerAdapterPizzaliste( ArrayList<Pizza> pizzaList){
-        this.pizzaList = pizzaList;
+    public RecyclerAdapterEinkaufsliste( ArrayList<Einkauf> einkaufList){
+        this.einkaufList = einkaufList;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_pizza_item, parent, false);
+    public RecyclerAdapterEinkaufsliste.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_eikaufsliste_item, parent, false);
         MyViewHolder mvh = new MyViewHolder(v, listener);
         return mvh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Pizza pizza = pizzaList.get(position);
-        holder.name.setText(pizza.getName());
-        holder.pizza.setText(pizza.getPizza());
-        holder.extras.setText(pizza.getExtras());
-        //holder.deleteImage.setImageResource(R.drawable.ic_delete);
+    public void onBindViewHolder(@NonNull RecyclerAdapterEinkaufsliste.MyViewHolder holder, int position) {
+        Einkauf einkauf = einkaufList.get(position);
+
+        holder.beschreibung.setText(einkauf.getBeschreibung());
+        holder.checkImage.setImageResource(R.drawable.ic_baseline_bookmark_added_24);
+        holder.deleteImage.setImageResource(R.drawable.ic_delete);
     }
 
     @Override
     public int getItemCount() {
-        return pizzaList.size();
+        return einkaufList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView name, pizza, extras;
-        ImageView deleteImage;
+        TextView beschreibung;
+        ImageView deleteImage, checkImage;
 
-        public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
+        public MyViewHolder(@NonNull View itemView, RecyclerAdapterEinkaufsliste.OnItemClickListener listener) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.tv_name);
-            pizza = itemView.findViewById(R.id.tv_pizza);
-            extras = itemView.findViewById(R.id.tv_extras2);
-            deleteImage = itemView.findViewById(R.id.btn_deletePL);
+            beschreibung = itemView.findViewById(R.id.tv_beschreibungEL);
+            deleteImage = itemView.findViewById(R.id.btn_deleteEL);
+            checkImage = itemView.findViewById(R.id.btn_checkEL);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            checkImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (listener != null){
