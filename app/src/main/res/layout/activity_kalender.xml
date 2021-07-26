@@ -8,7 +8,7 @@
     tools:context=".Kalender">
 
     <CalendarView
-        android:id="@+id/calendarView"
+        android:id="@+id/cv_calendarView"
         android:layout_width="409dp"
         android:layout_height="351dp"
         android:background="#FFFFFF"
