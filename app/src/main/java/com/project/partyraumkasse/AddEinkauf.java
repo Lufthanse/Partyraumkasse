@@ -71,4 +71,9 @@ public class AddEinkauf extends AppCompatActivity {
         snackbar_vis.show();
     }
 
+    public void onBackPressed(){
+        Intent intent = new Intent(this, Einkaufsliste.class);
+        startActivity(intent);
+    }
+
 }

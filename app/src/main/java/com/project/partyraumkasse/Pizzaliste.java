@@ -147,5 +147,11 @@ public class Pizzaliste extends AppCompatActivity {
             adapterPizzaliste.notifyItemChanged(position);
         }
 
+
+        public void onBackPressed(){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+    }
+
     }
 

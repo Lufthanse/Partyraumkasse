@@ -19,7 +19,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#512DA8"
+            android:background="#352065"
             android:minHeight="50dp">
 
             <TextView
@@ -31,7 +31,7 @@
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
                 android:text="Name"
-                android:textColor="#170C30" />
+                android:textColor="#C2185B" />
 
             <TextView
                 android:id="@+id/tv_pizza"
@@ -44,7 +44,7 @@
                 android:layout_marginLeft="144dp"
                 android:layout_marginTop="0dp"
                 android:text="Pizza"
-                android:textColor="#170C30" />
+                android:textColor="#C2185B" />
 
             <TextView
                 android:id="@+id/tv_extras2"
@@ -57,7 +57,7 @@
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="10dp"
                 android:text="Extras"
-                android:textColor="#170C30" />
+                android:textColor="#C2185B" />
 
             <ImageView
                 android:id="@+id/btn_deletePL"

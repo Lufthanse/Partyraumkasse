@@ -10,6 +10,8 @@
         android:id="@+id/cardViewEL"
         android:layout_width="412dp"
         android:layout_height="56dp"
+        android:background="#170C30"
+        android:backgroundTint="#170C30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,7 +20,7 @@
             android:id="@+id/relativeLayoutEL"
             android:layout_width="412dp"
             android:layout_height="45dp"
-            android:background="#1565C0"
+            android:background="#352065"
             android:minHeight="50dp">
 
             <ImageButton
@@ -33,7 +35,7 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="6dp"
                 android:layout_marginBottom="7dp"
-                android:background="#512DA8"
+                android:background="#352065"
                 app:srcCompat="@drawable/ic_delete"
                 tools:ignore="VectorDrawableCompat" />
 
@@ -49,7 +51,7 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="41dp"
                 android:layout_marginBottom="8dp"
-                android:backgroundTint="#512DA8"
+                android:backgroundTint="#352065"
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <TextView
@@ -62,7 +64,8 @@
                 android:layout_marginTop="11dp"
                 android:layout_marginEnd="97dp"
                 android:layout_marginBottom="14dp"
-                android:text="Beschreibung" />
+                android:text="Beschreibung"
+                android:textColor="#C2185B" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

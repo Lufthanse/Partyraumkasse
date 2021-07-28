@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#900277BD"
+    android:background="#170C30"
     tools:context=".Einkaufsliste">
 
     <TextView
@@ -40,8 +40,10 @@
         android:id="@+id/btn_addEinkauf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="628dp"
+        android:background="#17BA1F"
+        android:backgroundTint="#17BA1F"
         android:onClick="navigateAddEinkauf"
         app:layout_constraintBottom_toBottomOf="@+id/rv_einkaufsliste"
         app:layout_constraintEnd_toEndOf="parent"

@@ -108,4 +108,9 @@ public class Einkaufsliste extends AppCompatActivity {
     public void changeItem(int position) {
         adapterEinkaufsliste.notifyItemChanged(position);
     }
+
+    public void onBackPressed(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

@@ -18,7 +18,7 @@
             android:id="@+id/rl_zahlung"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="#512DA8">
+            android:background="#352065">
 
             <TextView
                 android:id="@+id/tv_nameZ"
@@ -36,7 +36,8 @@
                 android:layout_marginEnd="276dp"
                 android:layout_marginRight="276dp"
                 android:layout_marginBottom="32dp"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="#C2185B" />
 
             <TextView
                 android:id="@+id/tv_betragZ"
@@ -54,7 +55,8 @@
                 android:layout_marginEnd="35dp"
                 android:layout_marginRight="35dp"
                 android:layout_marginBottom="6dp"
-                android:text="Betrag" />
+                android:text="Betrag"
+                android:textColor="#C2185B" />
 
             <TextView
                 android:id="@+id/tv_datumZ"
@@ -72,7 +74,8 @@
                 android:layout_marginEnd="169dp"
                 android:layout_marginRight="169dp"
                 android:layout_marginBottom="32dp"
-                android:text="Datum" />
+                android:text="Datum"
+                android:textColor="#C2185B" />
 
             <TextView
                 android:id="@+id/tv_uhrzeitZ"
@@ -90,7 +93,8 @@
                 android:layout_marginEnd="110dp"
                 android:layout_marginRight="110dp"
                 android:layout_marginBottom="33dp"
-                android:text="Uhrzeit" />
+                android:text="Uhrzeit"
+                android:textColor="#C2185B" />
 
             <TextView
                 android:id="@+id/tv_grundZ"
@@ -108,7 +112,8 @@
                 android:layout_marginEnd="124dp"
                 android:layout_marginRight="124dp"
                 android:layout_marginBottom="5dp"
-                android:text="Grund" />
+                android:text="Grund"
+                android:textColor="#C2185B" />
 
             <TextView
                 android:id="@+id/tv_zahlungsartZ"
@@ -124,7 +129,8 @@
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="21dp"
                 android:layout_marginRight="21dp"
-                android:text="Zahlungsart" />
+                android:text="Zahlungsart"
+                android:textColor="#C2185B" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

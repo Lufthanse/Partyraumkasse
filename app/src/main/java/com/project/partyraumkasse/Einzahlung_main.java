@@ -1,8 +1,10 @@
 package com.project.partyraumkasse;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,6 +38,7 @@ public class Einzahlung_main extends AppCompatActivity {
         grund = (EditText) findViewById(R.id.inp_grund);
         betrag = (EditText) findViewById(R.id.inp_money);
         name = (EditText) findViewById(R.id.inp_name);
+
     }
 
     public void addGetraenk(View view){
@@ -129,6 +132,11 @@ public class Einzahlung_main extends AppCompatActivity {
         }
         snackbar_vis.show();
 
+    }
+
+    public void onBackPressed(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }
