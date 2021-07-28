@@ -43,7 +43,7 @@
         android:drawableLeft="@drawable/einzahlung"
         android:onClick="navigateEinzahlung"
         android:padding="16dp"
-        app:backgroundTint="#352065"
+        app:backgroundTint="#352064"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
