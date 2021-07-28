@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -65,6 +67,7 @@ public class Einkaufsliste extends AppCompatActivity {
             public void onItemClick(int position){
                 changeItem(position);
             }
+
         });
     }
 
@@ -107,6 +110,27 @@ public class Einkaufsliste extends AppCompatActivity {
 
     public void changeItem(int position) {
         adapterEinkaufsliste.notifyItemChanged(position);
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int choice) {
+                switch (choice){
+                    case DialogInterface.BUTTON_POSITIVE:
+                        Einkauf ek = einkaufsliste.get(position);
+                        DatabaseReference ekdel = FirebaseDatabase.getInstance().getReference("Einkauf").child(ek.getId());
+                        ekdel.removeValue();
+                        einkaufsliste.remove(ek);
+                        adapterEinkaufsliste.notifyItemChanged(position);
+
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        break;
+                }
+            }
+        };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this.findViewById(R.id.view_einkaufsliste).getContext());
+        builder.setTitle("Achtung!");
+        builder.setMessage("Einkauf erledigt?");
+        builder.setPositiveButton("Ja", dialogClickListener).setNegativeButton("Nein", dialogClickListener).show();
     }
 
     public void onBackPressed(){
