@@ -1,75 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#170C30"
     tools:context=".Pizzaliste">
 
-    <TextView
-        android:id="@+id/tv_PizzalistePL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="182dp"
-        android:layout_marginLeft="182dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="182dp"
-        android:layout_marginRight="182dp"
-        android:layout_marginBottom="628dp"
-        android:text="Pizzaliste"
-        android:textColor="#C2185B"
-        android:textSize="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageButton
-        android:id="@+id/btn_addPL"
-        android:layout_width="49dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="628dp"
-        android:background="#170C30"
-        android:onClick="addPizza"
-        android:tint="#C2185B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_PizzalistePL"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.484"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        <ImageButton
+            android:id="@+id/btn_delPL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#170C30"
+            android:onClick="deletePL"
+            android:tint="#C2185B"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
 
-    <ImageButton
-        android:id="@+id/btn_delPL"
-        android:layout_width="49dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="628dp"
-        android:background="#170C30"
-        android:onClick="deletePL"
-        android:tint="#C2185B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_PizzalistePL"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.484"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
+        <TextView
+            android:id="@+id/tv_PizzalistePL"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pizzaliste"
+            android:textColor="#C2185B"
+            android:layout_weight="1"
+            android:textSize="36dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_pizzaliste"
-        android:layout_width="411dp"
-        android:layout_height="620dp"
-        android:layout_marginTop="30dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_PizzalistePL"
-        tools:visibility="visible" />
+        <ImageButton
+            android:id="@+id/btn_addPL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#170C30"
+            android:onClick="addPizza"
+            android:tint="#C2185B"
+            app:srcCompat="@android:drawable/ic_menu_add" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pizzaliste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            tools:visibility="visible"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -19,17 +19,63 @@
             android:id="@+id/inp_eventEv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#C2185B"
-            android:layout_weight="1"
             android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="#C2185B"
             android:ems="10"
-            android:hint="Name"
+            android:gravity="center_horizontal"
+            android:hint="Event"
             android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="#C2185B"
+            android:textColorHint="#C2185B"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_datumEv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/inp_datumEv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#C2185B"
+            android:ems="10"
+            android:hint="Datum"
+            android:inputType="date"
+            android:textAlignment="center"
+            android:textColor="#C2185B"
+            android:textColorHint="#C2185B"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_uhrzeitEv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/inp_uhrzeitEv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Uhrzeit"
+            android:layout_weight="1"
+            android:backgroundTint="#C2185B"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
             android:textColor="#C2185B"
             android:textColorHint="#C2185B"
             android:textSize="24sp"
-            android:textAlignment="center"
-            android:gravity="center_horizontal" />
+            android:ems="10"
+            android:inputType="time" />
 
     </LinearLayout>
 
@@ -49,30 +95,12 @@
             android:backgroundTint="#C2185B"
             android:ems="10"
             android:gravity="center_horizontal"
-            android:hint="Pizza"
+            android:hint="Location"
             android:inputType="textPersonName"
             android:textAlignment="center"
             android:textColor="#C2185B"
             android:textColorHint="#C2185B"
             android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_extraPL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_extrasPL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:backgroundTint="#352065"
-            android:onClick="showextras"
-            android:text="Extras" />
 
     </LinearLayout>
 
@@ -91,7 +119,7 @@
             android:backgroundTint="#C2185B"
             android:ems="10"
             android:gravity="center_horizontal"
-            android:hint="Extras"
+            android:hint="Hinweise"
             android:inputType="textPersonName"
             android:textAlignment="center"
             android:textColor="#C2185B"
@@ -103,19 +131,20 @@
     <LinearLayout
         android:id="@+id/ll_addPL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="145dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_hinzufügenEv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:backgroundTint="#352065"
-            android:onClick="addPizzas"
+            android:onClick="addEvent"
             android:text="Hinzufügen" />
 
     </LinearLayout>
+
 
 </LinearLayout>

@@ -23,7 +23,7 @@
             android:minHeight="50dp">
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_bezeichnungEv"
                 android:layout_width="109dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -50,7 +50,7 @@
                 android:id="@+id/tv_extras2"
                 android:layout_width="312dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_name"
+                android:layout_below="@+id/tv_bezeichnungEv"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="11dp"

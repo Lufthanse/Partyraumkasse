@@ -1,6 +1,5 @@
 package com.project.partyraumkasse;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RecyclerAdapterHistorie extends RecyclerView.Adapter<RecyclerAdapterHistorie.MyViewHolder>{
@@ -65,7 +62,7 @@ public class RecyclerAdapterHistorie extends RecyclerView.Adapter<RecyclerAdapte
         public MyViewHolder(@NonNull View itemView, RecyclerAdapterHistorie.OnItemClickListener listener) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.tv_nameZ);
+            name = itemView.findViewById(R.id.tv_bezeichnungE);
             datum = itemView.findViewById(R.id.tv_datumZ);
             uhrzeit = itemView.findViewById(R.id.tv_uhrzeitZ);
             grund = itemView.findViewById(R.id.tv_grundZ);

@@ -1,6 +1,5 @@
 package com.project.partyraumkasse;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -62,7 +60,7 @@ public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdap
         public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.tv_name);
+            name = itemView.findViewById(R.id.tv_bezeichnungEv);
             pizza = itemView.findViewById(R.id.tv_pizza);
             extras = itemView.findViewById(R.id.tv_extras2);
             deleteImage = itemView.findViewById(R.id.btn_deletePL);
