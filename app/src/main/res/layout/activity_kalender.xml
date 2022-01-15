@@ -20,7 +20,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Events"
-            android:textAlignment="center"
             android:textColor="#C2185B"
             android:textSize="36dp" />
 
@@ -39,16 +38,44 @@
     <LinearLayout
         android:id="@+id/ll_calPl"
         android:layout_width="match_parent"
-        android:layout_height="414dp"
+        android:layout_height="303dp"
         android:orientation="horizontal">
 
-        <CalendarView
-            android:id="@+id/cv_calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white" />
+
+
+        <com.github.sundeepk.compactcalendarview.CompactCalendarView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/compactcalendar_view"
+            android:layout_width="fill_parent"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_height="250dp"
+            app:compactCalendarTargetHeight="250dp"
+            app:compactCalendarTextSize="12sp"
+            app:compactCalendarBackgroundColor="@color/white"
+            app:compactCalendarTextColor="@color/black"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
+            app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
+            app:compactCalendarMultiEventIndicatorColor="#fff"
+            />
+
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_rvEv"
+        android:layout_width="match_parent"
+        android:layout_height="382dp"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_eventListe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>

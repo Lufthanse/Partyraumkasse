@@ -23,7 +23,7 @@
             android:minHeight="50dp">
 
             <TextView
-                android:id="@+id/tv_bezeichnungEv"
+                android:id="@+id/tv_namePl"
                 android:layout_width="109dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -34,7 +34,7 @@
                 android:textColor="#C2185B" />
 
             <TextView
-                android:id="@+id/tv_pizza"
+                android:id="@+id/tv_pizzaPl"
                 android:layout_width="187dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -47,10 +47,10 @@
                 android:textColor="#C2185B" />
 
             <TextView
-                android:id="@+id/tv_extras2"
+                android:id="@+id/tv_extraPl"
                 android:layout_width="312dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_bezeichnungEv"
+                android:layout_below="@+id/tv_namePl"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="11dp"
@@ -60,7 +60,7 @@
                 android:textColor="#C2185B" />
 
             <ImageView
-                android:id="@+id/btn_deletePL"
+                android:id="@+id/btn_deletePl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"

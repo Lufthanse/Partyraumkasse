@@ -60,10 +60,10 @@ public class RecyclerAdapterPizzaliste extends RecyclerView.Adapter<RecyclerAdap
         public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.tv_bezeichnungEv);
-            pizza = itemView.findViewById(R.id.tv_pizza);
-            extras = itemView.findViewById(R.id.tv_extras2);
-            deleteImage = itemView.findViewById(R.id.btn_deletePL);
+            name = itemView.findViewById(R.id.tv_namePl);
+            pizza = itemView.findViewById(R.id.tv_pizzaPl);
+            extras = itemView.findViewById(R.id.tv_extraPl);
+            deleteImage = itemView.findViewById(R.id.btn_deletePl);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

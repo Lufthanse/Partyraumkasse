@@ -111,7 +111,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/inp_hinweiseEv"
+            android:id="@+id/inp_hinweiseEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

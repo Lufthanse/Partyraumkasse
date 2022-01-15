@@ -36,7 +36,7 @@ public class Pop extends Activity {
 
         name = (EditText) findViewById(R.id.inp_eventEv);
         pizza = (EditText) findViewById(R.id.inp_OrtEv);
-        extras = (EditText) findViewById(R.id.inp_hinweiseEv);
+        extras = (EditText) findViewById(R.id.inp_hinweiseEvent);
 
     }
 

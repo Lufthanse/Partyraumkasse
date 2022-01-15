@@ -41,7 +41,7 @@ public class EventAdd extends AppCompatActivity {
         datum = (EditText) findViewById(R.id.inp_datumEv);
         uhrzeit = (EditText) findViewById(R.id.inp_uhrzeitEv);
         location = (EditText) findViewById(R.id.inp_OrtEv);
-        hinweis = (EditText) findViewById(R.id.inp_hinweiseEv);
+        hinweis = (EditText) findViewById(R.id.inp_hinweiseEvent);
 
     }
 
@@ -80,7 +80,7 @@ public class EventAdd extends AppCompatActivity {
         datumString = datum.getText().toString();
         uhrzeitString = uhrzeit.getText().toString();
         locationString = location.getText().toString();
-        hinweisString = location.getText().toString();
+        hinweisString = hinweis.getText().toString();
 
         Event ev = new Event(eventString, datumString, uhrzeitString, locationString, hinweisString);
 

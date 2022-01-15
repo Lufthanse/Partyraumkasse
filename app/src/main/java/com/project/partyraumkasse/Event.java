@@ -7,6 +7,7 @@ import java.util.TimeZone;
 
 public class Event {
 
+    public String id;
     public String datum;
     public String uhrzeit;
     public String bezeichnung;
@@ -19,14 +20,17 @@ public class Event {
         this.ort = ort;
         this.hinweise = hinweise;
         this.bezeichnung = bezeichnung;
-        this.formatterDate = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = new Date();
-        this.datum = formatterDate.format(date).toString();
-        this.formatterTime = new SimpleDateFormat("HH:mm:ss");
-        ZonedDateTime zdt = ZonedDateTime.now();
-        Date time = new Date();
-        formatterTime.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
-        this.uhrzeit = formatterTime.format(time).toString();
+        this.datum = datum;
+        this.uhrzeit = uhrzeit;
+    }
+
+    public Event(String bezeichnung, String datum, String uhrzeit, String ort, String hinweise, String id){
+        this.ort = ort;
+        this.hinweise = hinweise;
+        this.bezeichnung = bezeichnung;
+        this.uhrzeit = uhrzeit;
+        this.datum = datum;
+        this.id = id;
     }
 
     public String getDatum() {
@@ -71,5 +75,13 @@ public class Event {
 
     public Event(){
 
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
