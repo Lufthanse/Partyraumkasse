@@ -1,236 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#170C30"
     tools:context=".Einzahlung_main">
 
-    <Button
-        android:id="@+id/btn_sonderzahlung"
-        android:layout_width="110dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="500dp"
-        android:backgroundTint="#352065"
-        android:onClick="showGrund"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_ueberschriftEZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginRight="128dp"
-        android:layout_marginBottom="628dp"
-        android:text="Einzahlung"
-        android:textColor="#C2185B"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_getraenk"
-        android:layout_width="110dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="280dp"
-        android:layout_marginBottom="500dp"
-        android:backgroundTint="#352065"
-        android:onClick="addGetraenk"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_ueberschriftEZ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:text="Einzahlung"
+            android:textAlignment="center"
+            android:textColor="#C2185B"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btn_flat"
-        android:layout_width="110dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="500dp"
-        android:backgroundTint="#352065"
-        android:onClick="addFlat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_sonderzahlung"
-        app:layout_constraintStart_toEndOf="@+id/btn_getraenk"
-        app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_getraenk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="280dp"
-        android:layout_marginRight="280dp"
-        android:layout_marginBottom="500dp"
-        android:text="Getränk"
-        android:textColor="#C2185B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_getraenk" />
 
-    <TextView
-        android:id="@+id/tv_Sonstiges"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="500dp"
-        android:text="Sonstiges"
-        android:textColor="#C2185B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sonderzahlung" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_flat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="500dp"
-        android:text="Flat"
-        android:textColor="#C2185B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_Sonstiges"
-        app:layout_constraintStart_toEndOf="@+id/tv_getraenk"
-        app:layout_constraintTop_toBottomOf="@+id/btn_flat" />
+        <Button
+            android:id="@+id/btn_getraenk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="#352065"
+            android:onClick="addGetraenk" />
 
-    <EditText
-        android:id="@+id/inp_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="330dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        android:textColor="#C2185B"
-        android:textColorHint="#C2185B"
-        android:backgroundTint="#C2185B"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_flat"
-        android:gravity="center_horizontal" />
+        <Button
+            android:id="@+id/btn_flat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="#352065"
+            android:onClick="addFlat" />
 
-    <EditText
-        android:id="@+id/inp_grund"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="200dp"
-        android:backgroundTint="#C2185B"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Grund"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="#C2185B"
-        android:textColorHint="#C2185B"
-        android:textSize="24sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_money" />
+        <Button
+            android:id="@+id/btn_sonderzahlung"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#352065"
+            android:onClick="showGrund" />
 
-    <EditText
-        android:id="@+id/inp_money"
-        android:layout_width="119dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="300dp"
-        android:backgroundTint="#C2185B"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:inputType="numberDecimal"
-        android:text="0"
-        android:textAlignment="center"
-        android:textColor="#C2185B"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_name" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
-        android:layout_marginBottom="300dp"
-        android:text="€"
-        android:textColor="#C2185B"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/inp_money"
-        app:layout_constraintTop_toBottomOf="@+id/inp_name" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_einzahlen"
-        android:layout_width="287dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="20dp"
-        android:background="#512DA8"
-        android:onClick="Einzahlen"
-        android:text="Einzahlen"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_grund" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_getraenk"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="Getränk"
+            android:textAlignment="center"
+            android:textColor="#C2185B"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_flat"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:text="Flat"
+            android:textAlignment="center"
+            android:textColor="#C2185B"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_Sonstiges"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:text="Sonstiges"
+            android:textAlignment="center"
+            android:textColor="#C2185B"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/inp_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#C2185B"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="#C2185B"
+            android:textColorHint="#C2185B"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/inp_money"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#C2185B"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberDecimal"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#C2185B"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:text="€"
+            android:textColor="#C2185B"
+            android:textSize="36sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/inp_grund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#C2185B"
+            android:ems="10"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:hint="Grund"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="#C2185B"
+            android:textColorHint="#C2185B"
+            android:textSize="24sp"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_einzahlen"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#512DA8"
+            android:onClick="Einzahlen"
+            android:text="Einzahlen"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

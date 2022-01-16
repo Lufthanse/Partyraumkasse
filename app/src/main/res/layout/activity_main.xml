@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/roundedbutton"
             android:drawableLeft="@drawable/auszahlung"
@@ -110,7 +110,7 @@
 
         <TextView
             android:id="@+id/tv_einzahlung"
-            android:layout_width="200dp"
+            android:layout_width="206dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="Einzahlung"
@@ -121,7 +121,7 @@
 
         <TextView
             android:id="@+id/tv_auszahlung"
-            android:layout_width="213dp"
+            android:layout_width="204dp"
             android:layout_height="wrap_content"
             android:text="Auszahlung"
             android:textAlignment="center"
@@ -157,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/roundedbutton"
             android:drawableLeft="@drawable/pizza"
@@ -174,7 +174,7 @@
 
         <TextView
             android:id="@+id/tv_historie"
-            android:layout_width="211dp"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="Historie"
@@ -183,10 +183,9 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-
         <TextView
             android:id="@+id/tv_pizzaliste"
-            android:layout_width="200dp"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="Pizzaliste"
@@ -218,11 +217,11 @@
 
         <Button
             android:id="@+id/btn_ekliste"
-            android:layout_width="155dp"
-            android:layout_height="133dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/roundedbutton"
             android:drawableLeft="@drawable/list"
@@ -234,7 +233,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:orientation="horizontal">
 
         <TextView
@@ -242,6 +241,7 @@
             android:layout_width="208dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
+            android:layout_marginBottom="1dp"
             android:text="Eventmanager"
             android:textAlignment="center"
             android:textColor="#C2185B"
@@ -253,6 +253,7 @@
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
+            android:layout_marginBottom="1dp"
             android:text="Einkaufsliste"
             android:textAlignment="center"
             android:textColor="#C2185B"

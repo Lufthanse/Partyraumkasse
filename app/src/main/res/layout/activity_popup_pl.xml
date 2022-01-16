@@ -96,7 +96,8 @@
             android:textAlignment="center"
             android:textColor="#C2185B"
             android:textColorHint="#C2185B"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:visibility="invisible" />
 
     </LinearLayout>
 
