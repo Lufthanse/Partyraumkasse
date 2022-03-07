@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> einzahlungen = new ArrayList<>();
     private ArrayList<String> auszahlungen = new ArrayList<>();
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference einzahlungRoot = db.getReference().child("Einzahlung");
-    private DatabaseReference auszahlungRoot = db.getReference().child("Auszahlung");
+    private DatabaseReference einzahlungRoot = db.getReference().child("PK/Einzahlung");
+    private DatabaseReference auszahlungRoot = db.getReference().child("PK/Auszahlung");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,6 +147,11 @@ public class MainActivity extends AppCompatActivity {
 
     public interface SecondCallback{
         void onCallback(ArrayList<String> ausz);
+    }
+
+    public void openHype(View view){
+        Intent intent = new Intent(this, Hype.class);
+        startActivity(intent);
     }
 
 

@@ -40,7 +40,7 @@ public class Kalender extends AppCompatActivity {
     private ArrayList<Event> eventlist = new ArrayList<>();
     private ArrayList<Event> deleteevetlist = new ArrayList<Event>();
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference().child("Event");
+    private DatabaseReference root = db.getReference().child("PK/Event");
     private RecyclerAdapterEvents adapterEventliste;
     public Date dateev;
     public SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -197,7 +197,7 @@ public class Kalender extends AppCompatActivity {
         Event eventDelete = eventlist.get(position);
         eventlist.remove(position);
         adapterEventliste.notifyItemRemoved(position);
-        DatabaseReference evdel = FirebaseDatabase.getInstance().getReference("Event").child(eventDelete.getId());
+        DatabaseReference evdel = FirebaseDatabase.getInstance().getReference("PK/Event").child(eventDelete.getId());
         evdel.removeValue();
     }
 

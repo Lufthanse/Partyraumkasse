@@ -10,7 +10,7 @@ public class DAOEvent {
 
     public DAOEvent() {
         db = FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(Event.class.getSimpleName());
+        databaseReference = db.getReference("PK/" + Event.class.getSimpleName());
     }
 
     public Task<Void> add(Event ev){

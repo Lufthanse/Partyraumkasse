@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 public class Pizzaliste extends AppCompatActivity {
     private ArrayList<Pizza> pizzalist = new ArrayList<>();
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference().child("Pizza");
+    private DatabaseReference root = db.getReference().child("PK/Pizza");
     private RecyclerAdapterPizzaliste adapterPizzaliste;
 
     @Override
@@ -114,7 +114,7 @@ public class Pizzaliste extends AppCompatActivity {
             Pizza pizzaDelete = pizzalist.get(position);
             pizzalist.remove(position);
             adapterPizzaliste.notifyItemRemoved(position);
-            DatabaseReference pizdel = FirebaseDatabase.getInstance().getReference("Pizza").child(pizzaDelete.getId());
+            DatabaseReference pizdel = FirebaseDatabase.getInstance().getReference("PK/Pizza").child(pizzaDelete.getId());
             pizdel.removeValue();
         }
 
@@ -125,7 +125,7 @@ public class Pizzaliste extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int choice) {
                     switch (choice){
                         case DialogInterface.BUTTON_POSITIVE:
-                        DatabaseReference pldel = FirebaseDatabase.getInstance().getReference("Pizza");
+                        DatabaseReference pldel = FirebaseDatabase.getInstance().getReference("PK/Pizza");
                         pldel.removeValue();
                         pizzalist.clear();
                         adapterPizzaliste.notifyDataSetChanged();

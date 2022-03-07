@@ -10,7 +10,7 @@ public class DAOEinzahlung {
 
     public DAOEinzahlung() {
         db = FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(Einzahlung.class.getSimpleName());
+        databaseReference = db.getReference("PK/" + Einzahlung.class.getSimpleName());
     }
 
     public Task<Void> add(Einzahlung ez){

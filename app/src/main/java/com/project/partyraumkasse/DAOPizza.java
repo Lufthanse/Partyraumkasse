@@ -10,7 +10,7 @@ public class DAOPizza {
 
     public DAOPizza() {
         db = FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(Pizza.class.getSimpleName());
+        databaseReference = db.getReference("PK/" + Pizza.class.getSimpleName());
     }
 
     public Task<Void> add(Pizza pz){

@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class Einkaufsliste extends AppCompatActivity {
     private ArrayList<Einkauf> einkaufsliste = new ArrayList<>();
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference().child("Einkauf");
+    private DatabaseReference root = db.getReference().child("PK/Einkauf");
     private RecyclerAdapterEinkaufsliste adapterEinkaufsliste;
 
     @Override
@@ -100,7 +100,7 @@ public class Einkaufsliste extends AppCompatActivity {
         Einkauf einkaufDelete = einkaufsliste.get(position);
         einkaufsliste.remove(position);
         adapterEinkaufsliste.notifyItemRemoved(position);
-        DatabaseReference ekdel = FirebaseDatabase.getInstance().getReference("Einkauf").child(einkaufDelete.getId());
+        DatabaseReference ekdel = FirebaseDatabase.getInstance().getReference("PK/Einkauf").child(einkaufDelete.getId());
         ekdel.removeValue();
     }
 
@@ -116,7 +116,7 @@ public class Einkaufsliste extends AppCompatActivity {
                 switch (choice){
                     case DialogInterface.BUTTON_POSITIVE:
                         Einkauf ek = einkaufsliste.get(position);
-                        DatabaseReference ekdel = FirebaseDatabase.getInstance().getReference("Einkauf").child(ek.getId());
+                        DatabaseReference ekdel = FirebaseDatabase.getInstance().getReference("PK/Einkauf").child(ek.getId());
                         ekdel.removeValue();
                         einkaufsliste.remove(ek);
                         adapterEinkaufsliste.notifyItemChanged(position);

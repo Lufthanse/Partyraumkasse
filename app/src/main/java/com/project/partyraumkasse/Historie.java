@@ -23,8 +23,8 @@ public class Historie extends AppCompatActivity {
     private ArrayList<Zahlung> zahlungList1 = new ArrayList<Zahlung>();
     private ArrayList<Zahlung> zahlungList2 = new ArrayList<Zahlung>();
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference ez = db.getReference().child("Einzahlung");
-    private DatabaseReference az = db.getReference().child("Auszahlung");
+    private DatabaseReference ez = db.getReference().child("PK/Einzahlung");
+    private DatabaseReference az = db.getReference().child("PK/Auszahlung");
     private RecyclerAdapterHistorie adapterHistorie;
 
     @Override

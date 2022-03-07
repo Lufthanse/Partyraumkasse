@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Partyraumkasse"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EventAdd"></activity>
+        <activity android:name=".Hype"></activity>
+        <activity android:name=".EventAdd" />
         <activity android:name=".AddEinkauf" />
         <activity android:name=".Pizzaliste" />
         <activity android:name=".Einkaufsliste" />

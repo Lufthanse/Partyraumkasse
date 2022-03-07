@@ -10,7 +10,7 @@ public class DAOAuszahlung {
 
     public DAOAuszahlung() {
         db = FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(Auszahlung.class.getSimpleName());
+        databaseReference = db.getReference("PK/" + Auszahlung.class.getSimpleName());
     }
 
     public Task<Void> add(Auszahlung az){

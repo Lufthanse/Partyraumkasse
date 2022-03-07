@@ -39,8 +39,8 @@
 
             <TextView
                 android:id="@+id/tv_kassenstandtext"
-                android:layout_width="236dp"
-                android:layout_height="45dp"
+                android:layout_width="169dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:text="Kassenstand:"
@@ -61,7 +61,17 @@
                 android:text="100.00€"
                 android:textColor="#C2185B"
                 android:textSize="24sp" />
+
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_hype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/roundedbutton"
+            android:onClick="openHype"
+            android:text="HYPE" />
     </LinearLayout>
 
     <LinearLayout

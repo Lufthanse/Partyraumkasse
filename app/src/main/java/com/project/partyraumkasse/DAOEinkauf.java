@@ -10,7 +10,7 @@ public class DAOEinkauf {
 
     public DAOEinkauf() {
         db = FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(Einkauf.class.getSimpleName());
+        databaseReference = db.getReference("PK/" + Einkauf.class.getSimpleName());
     }
 
     public Task<Void> add(Einkauf ek){

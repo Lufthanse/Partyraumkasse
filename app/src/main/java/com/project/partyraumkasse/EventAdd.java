@@ -54,22 +54,22 @@ public class EventAdd extends AppCompatActivity {
         }
 
         if (datum.getText().toString().matches("")) {
-            errorMessage = "Bitte Event eintragen!";
+            errorMessage = "Bitte Datum eintragen!";
             ShowSnackbar(errorMessage);
         }
 
         if (uhrzeit.getText().toString().matches("")) {
-            errorMessage = "Bitte Event eintragen!";
+            errorMessage = "Bitte Uhrzeit eintragen!";
             ShowSnackbar(errorMessage);
         }
 
         if (location.getText().toString().matches("")) {
-            errorMessage = "Bitte Event eintragen!";
+            errorMessage = "Bitte Ort eintragen!";
             ShowSnackbar(errorMessage);
         }
 
         if (hinweis.getText().toString().matches("")) {
-            errorMessage = "Bitte Event eintragen!";
+            errorMessage = "Bitte Hinweis eintragen!";
             ShowSnackbar(errorMessage);
         }
 
@@ -87,7 +87,7 @@ public class EventAdd extends AppCompatActivity {
         DAOEvent dao = new DAOEvent();
         dao.add(ev).addOnSuccessListener(suc->
         {
-            Toast.makeText(this, "Event gespeichert", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Event gespeichert GROD GEIL IS", Toast.LENGTH_SHORT).show();
         }).addOnFailureListener(er->
         {
             Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT);
